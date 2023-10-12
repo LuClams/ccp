@@ -13,23 +13,42 @@ class CompteBancaire {
     }
 
 
-    public function depot ($depot) {
-        $depot = rand(1, 10000);
-        return $this->solde += $depot;
+    public function getSolde() {
+        return $this->solde;
     }
 
-    public function retrait ($retrait) {
-        $retrait = rand(1, 10000);
+    public function setSolde($solde) {
+        $this->solde = $solde;
+    }
+
+    public function getNom() {
+        return $this->name;
+    }
+
+    public function setNom($name) {
+        $this->name = $name;
+    }
+
+
+    public function depot () {
+        $depot = rand(1, 10);
+        echo $this->solde += $depot;
+    }
+
+    public function retrait () {
+        $retrait = rand(1, 10);
 
         if($retrait > $this->solde) {
             echo "L'opération n'est pas possible";
         } else {
 
         }
-        return $this->solde -= $retrait;
+        echo $this->solde -= $retrait;
     }
 
     public function affiche () {
-        return "Le solde du compte bancaire de $this->name est de $this->solde euros";
+        echo "Le solde du compte bancaire de M./Mme $this->name est de $this->solde euros";
     }
 }
+
+
