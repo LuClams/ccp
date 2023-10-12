@@ -30,20 +30,19 @@ class CompteBancaire {
     }
 
 
-    public function depot () {
-        $depot = rand(1, 10);
+    public function depot ($depot) {
+        
         echo $this->solde += $depot;
     }
 
-    public function retrait () {
-        $retrait = rand(1, 10);
+    public function retrait ($retrait) {
 
         if($retrait > $this->solde) {
             echo "L'opération n'est pas possible";
         } else {
-
+          echo $this->solde -= $retrait;
         }
-        echo $this->solde -= $retrait;
+        
     }
 
     public function affiche () {
